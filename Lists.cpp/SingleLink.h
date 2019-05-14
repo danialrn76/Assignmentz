@@ -29,7 +29,7 @@ public:
 	void Insert(int a_iterator, int a_value, E_INSERT a_typeOfInsert); // insert a value at a certain location
 
 	void Erase(int a_iterator); // remove value at this iterator
-	int begin(); // return an iterator fo the first element
+	int begin(); // return an iterator for the first element
 	int end(); // return an iterator for the last element
 	int First();
 	int Last();

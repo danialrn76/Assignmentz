@@ -25,8 +25,109 @@ DoubleLink::~DoubleLink()
 }
 
 
+void DoubleLink::Erase(Iterator a_iterator, int a)
+{
+	
+
+
+	Node *current = head, *previous = new Node();
+
+	a_iterator.m_node = new Node();
+
+
+	a_iterator.m_node->next = current;
+	a_iterator.m_node->prev = previous;
+	
+	
+	previous->next = current->next;
+	
+	a_iterator + a;
+	Iterator temp = a_iterator + a;
+
+	delete &a;
+	
+
+
+
+
+
+
+
+
+	/*for (int i = 1; i < a; ++i) {
+		previous = current;
+		current = current->next;
+
+	}*/
+	/*previous->next = current->next;*/
+	/*Iterator i = head;
+
+	i + a;
+*/
+
+
+	/*a_iterator.operator+(a);*/
+
+
+
+
+	//Node *current = head;
+	//a_iterator.operator+();
+	
+
+	/*if (Empty()) {
+		cout << " the damn list is empty";
+	}
+	else if (!Empty()) {
+		a_iterator + 2;
+	a_iterator.m_node = head;
+	}*/
+	 
+}
+
+
+
 void DoubleLink::Remove(int value)
 {
+
+	Node *current = head, *previous = nullptr;
+	/*std::cout << "this list is empty" << std::endl;*/
+	if (Empty()) {
+		std::cout << " the list is empty" << std::endl;
+	}
+	else if (current->m_data == value) {
+		head = current->next;
+		delete current;
+
+		/*Iterator temp;
+		
+		Erase(temp, value);
+*/
+
+
+	}
+	else
+	{
+		while (current->m_data != value && current->next != nullptr) {
+			previous = current;
+			current = current->next;
+		}
+
+		if (current->next == nullptr && current->m_data != value) {
+
+			std::cout << "the value (" << value << ") was not found in the list" << std::endl;
+		}
+		else
+		{
+
+			previous->next = current->next;
+			delete current;
+
+
+		}
+	}
+
+
 }
 
 void DoubleLink::PopBack()
@@ -154,12 +255,20 @@ void DoubleLink::PushBack(int a_value)
 
 DoubleLink::Iterator DoubleLink::Begin()
 {
-	return Iterator();
+	return head;
 }
+
 
 DoubleLink::Iterator DoubleLink::End()
 {
-	return Iterator();
+	return tail;
+}
+
+Node * DoubleLink::First()
+{
+	
+	return head;
+
 }
 
 int DoubleLink::count()
@@ -176,6 +285,6 @@ int DoubleLink::count()
 	
 }
 
-
-
-
+DoubleLink::Iterator::~Iterator()
+{
+}

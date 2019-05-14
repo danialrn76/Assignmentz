@@ -83,9 +83,10 @@ void SingleLink::Insert(int a_iterator, int a_value, E_INSERT a_typeOfInsert)
 void SingleLink::Erase(int a_iterator)
 {
 	Node *current = head, *previous = new Node();
-	for (int i = 1; i < a_iterator; i++) {
+	for (int i = 1; i < a_iterator; ++i) {
 		previous = current;
 		current = current->next;
+		
 	}
 	previous->next = current->next;
 }
@@ -231,7 +232,7 @@ void SingleLink::PushBack(int a_end)
 	void SingleLink::Remove(int a_wanted)
 	{
 		Node *current = head, *previous = nullptr;
-		std::cout << "this list is empty" << std::endl;
+		/*std::cout << "this list is empty" << std::endl;*/
 		if (Empty()) {
 			std::cout << " the list is empty" << std::endl;
 		}
@@ -246,14 +247,17 @@ void SingleLink::PushBack(int a_end)
 				previous = current;
 				current = current->next;
 			}
+
 			if (current->next == nullptr && current->m_data != a_wanted) {
 			
 				std::cout << "the value (" << a_wanted << ") was not found in the list" << std::endl;
 			}
 			else
 			{
-				previous->next;
+		
+				previous->next = current->next;
 				delete current;
+				
 
 			}
 		}
