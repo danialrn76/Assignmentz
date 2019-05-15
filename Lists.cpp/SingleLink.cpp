@@ -69,6 +69,7 @@ void SingleLink::Insert(int a_iterator, int a_value, E_INSERT a_typeOfInsert)
 		}
 
 		Node *current = head, *previous = new Node(), *temp = new Node();
+
 		for (int i = 0; i < (a_iterator - a_typeOfInsert); i++) {
 			previous = current;
 			current = current->next;

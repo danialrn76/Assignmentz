@@ -35,28 +35,28 @@ int main()
 
 
 
-	//SingleLink * singlelist = new SingleLink();
+	SingleLink * singlelist = new SingleLink();
 
-	//singlelist->PushFront(222);
-	//singlelist->PushBack(223);
-	//singlelist->PushBack(224);
-	//singlelist->Print();
+	/*singlelist->PushFront(222);
+	singlelist->PushBack(223);
+	singlelist->PushBack(224);*/
+	singlelist->Print();
 
+	/*std::cout << std::endl;
+	singlelist->Erase(2);
+	singlelist->Print();*/
+	
 	//std::cout << std::endl;
 	//singlelist->Erase(2);
-	//singlelist->Print();
-	//
-	//std::cout << std::endl;
-	//singlelist->Erase(2);
 
 
-	///*singlelist->Remove(223);*/
+	/*singlelist->Remove(223);*/
 
+	//singlelist->Insert(2, 3);
+ //   singlelist->Print();
 
-
-
-	////singlelist->count();
-	//singlelist->Print();
+	//singlelist->count();
+	
 
 
 	DoubleLink *doubleList = new DoubleLink();
@@ -67,23 +67,30 @@ int main()
 
 	std::cout << std::endl << std::endl;
 
-	doubleList->PushBack(5);
-	doubleList->Print();
+	//doubleList->PushBack(5);
+	//doubleList->Print();
 
-	std::cout << std::endl << std::endl;
+	//std::cout << std::endl << std::endl;
 
-	doubleList->Remove(9);
-	doubleList->Print();
+	//doubleList->Remove(9);
+	//doubleList->Print();
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 	/*DoubleLink::Iterator().operator+(2);*/
 	
 	/*doubleList->First();*/
-	DoubleLink::Iterator first = doubleList->First();
-	
-	doubleList->Erase(first, 2);
+	DoubleLink::Iterator target(doubleList->head);
+	target.operator++(2);
+	//first.set(doubleList->head,2);
+	doubleList->Erase(target);
+
+	//doubleList->Erase(first, 2);
 
 	doubleList->Print();
+
+	//DoubleLink::Iterator aft = doubleList->First();
+	//doubleList->InsertAfter(aft, 8);
+	//doubleList->Print();
 	/*DoubleLink::Iterator().operator+(2);*/
 
     

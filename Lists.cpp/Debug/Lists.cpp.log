@@ -1,4 +1,2 @@
 ﻿  DoubleLink.cpp
-c:\users\s191280\source\repos\lists.cpp\doublelink.h(31): warning C4715: 'DoubleLink::Iterator::operator+': not all control paths return a value
-c:\users\s191280\source\repos\lists.cpp\doublelink.h(28): warning C4172: returning address of local variable or temporary
-  Lists.cpp.vcxproj -> C:\Users\s191280\source\repos\Lists.cpp\Debug\Lists.cpp.exe
+  Lists.cpp.vcxproj -> C:\Users\s191280\Desktop\Assignmentz\Lists.cpp\Debug\Lists.cpp.exe

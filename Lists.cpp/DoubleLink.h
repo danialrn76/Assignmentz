@@ -18,17 +18,26 @@ public:
 
 		void operator++() { m_node = m_node->next;};
 		void operator++(int) { m_node = m_node->next++; }
-		const Iterator& operator+(const int a_value) {
-			//e.g. Iterator + 12
-			for (int i = 0; i < a_value; i++) {
-				Node *m_node = new Node();
-				
-				m_node = m_node->next;
+		//const Iterator& operator+(const int a_value) {
+		//	//e.g. Iterator + 12
+		//	Node *m_node = new Node();
+		//	for (int i = 0; i < a_value; ++i) {
+		//		
+		//		m_node = m_node->next;
+		//	}	
+		//	return Iterator(m_node);
+		//	
+		//}
 
-			return Iterator(m_node);
-			}	
-			
-		}
+		//Node set(Node * a_head, const int a_value) {
+		//	Node *m_node = a_head;
+		//	for (int i = 0; i < (a_value-1); i++) {
+
+		//		m_node = m_node->next;
+		//	}
+		//	return *m_node;
+
+		//}
 
 		void operator--() { m_node = m_node->prev; }
 		void operator--(int) { m_node = m_node->prev; }
@@ -66,7 +75,7 @@ public:
 
 	int count(); // return how many element exist in the list
 
-	void Erase(Iterator a_iterator, int a); // remove an element by its iterator
+	void Erase(Iterator a_iterator); // remove an element by its iterator
 	void Remove(int value); // remove all elements with matching values
 
 	void PopBack(); // remove the last element
@@ -77,8 +86,8 @@ public:
 	void clear(); // remove all elements from the list
 	void Print();
 
-private:
 	Node *head, *tail;
+private:
 	int m_size;
 };
 
