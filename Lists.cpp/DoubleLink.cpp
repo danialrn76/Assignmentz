@@ -27,21 +27,24 @@ DoubleLink::~DoubleLink()
 
 void DoubleLink::Erase(Iterator a_iterator)
 {
-	Node * next;
-	Node * current;
-	Node * previous;
+	Node* node = new Node();
 
-	current = a_iterator.GetNode();
-	previous = current->prev;
-	next = current->next;
+	//for (int i = 0; i < a_iterator; i++) {
+	//
+	//
+	//}
+	//Node * next;
+	//Node * current;
+	//Node * previous;
 
-	previous->next = current->next;
-	next->prev = current->prev;
+	//current = a_iterator.GetNode();
+	//previous = current->prev;
+	//next = current->next;
 
-	delete current;
+	//previous->next = current->next;
+	//next->prev = current->prev;
 
-
-
+	//delete current;
 
 	
 
@@ -166,16 +169,16 @@ void DoubleLink::clear()
 
 void DoubleLink::Print()
 {
-	//Node *head = this->head;
-	//int i = 1;
-	//while (head)
-	//{
-	//	std::cout << i << ":" << head->m_data << std::endl;
-	//	head = head->next;
-	//	i++;
-	//}
+	Node *head = this->head;
+	int i = 1;
+	while (head)
+	{
+		std::cout << i << ":" << head->m_data << std::endl;
+		head = head->next;
+		i++;
+	}
 
-	Node * current = head;
+	/*Node * current = head;
 	int count = 0;
 	while (current != nullptr)
 	{
@@ -184,7 +187,7 @@ void DoubleLink::Print()
 		if (current->prev != nullptr) { std::cout << "previous: " << current->prev->m_data << std::endl; }
 		if (current->next != nullptr) { std::cout << "next: " << current->next->m_data << std::endl; }
 		current = current->next;
-	}
+	}*/
 
 }
 

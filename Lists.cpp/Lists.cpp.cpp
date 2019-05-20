@@ -35,12 +35,12 @@ int main()
 
 
 
-	SingleLink * singlelist = new SingleLink();
+	//SingleLink * singlelist = new SingleLink();
 
-	/*singlelist->PushFront(222);
-	singlelist->PushBack(223);
-	singlelist->PushBack(224);*/
-	singlelist->Print();
+	///*singlelist->PushFront(222);
+	//singlelist->PushBack(223);
+	//singlelist->PushBack(224);*/
+	//singlelist->Print();
 
 	/*std::cout << std::endl;
 	singlelist->Erase(2);
@@ -79,13 +79,14 @@ int main()
 	/*DoubleLink::Iterator().operator+(2);*/
 	
 	/*doubleList->First();*/
-	DoubleLink::Iterator target(doubleList->head);
-	target.operator++(2);
+	/*DoubleLink::Iterator target(doubleList->head);
+	target.operator++(2);*/
 	//first.set(doubleList->head,2);
-	doubleList->Erase(target);
+	/*doubleList->Erase(2);*/
 
 	//doubleList->Erase(first, 2);
-
+	DoubleLink::Iterator iter = DoubleLink::Iterator();
+	doubleList->Erase();
 	doubleList->Print();
 
 	//DoubleLink::Iterator aft = doubleList->First();
