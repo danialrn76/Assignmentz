@@ -283,17 +283,38 @@ library.close();
 
 				}
 				library.close();
+
 				cin >> new_stat;
-				fstream library7;
-				library7.open("library.dat", ios::in | ios::out | ios::binary | ios::_Nocreate);
-				if (library7.is_open()) {
-					char new_status[100];
-					cout << "Please enter the new status of the relevant book:  (1=in library, 2=on loan, 3=lost)\n";
-					cin >> new_status;
-					library7.seekp(((new_stat - 1) * 300) + 100, ios::beg);
+				if (new_stat == 1) {
+					fstream library7;
+					library7.open("library.dat", ios::in | ios::out | ios::binary | ios::_Nocreate);
+					if (library7.is_open()) {
+						char new_status[100];
+						cout << "Please enter the new status of the relevant book:  (1=in library, 2=on loan, 3=lost)\n";
+						cin >> new_status;
+
+						library7.seekp(((new_stat - 1) * 300) + 100, ios::beg);
+
+						library7.write((char*)&new_status, sizeof(char) * 100);
+						library7.close();
+					}
+				}
+				else {
+					fstream library8;
+					library8.open("library.dat", ios::in | ios::out | ios::binary | ios::_Nocreate);
+					if (library8.is_open()) {
+					
+						char new_status2[100];
+						cout << "Please enter the new status of the relevant book:  (1=in library, 2=on loan, 3=lost)\n";
+						cin >> new_status2;
+
+						library8.seekp(((new_stat - 1) * 300) + 200, ios::beg);
+
+						library8.write((char*)&new_status2, sizeof(char) * 100);
+						library8.close();
+					}
 				
-					library7.write((char*)&new_status, sizeof(char) * 100);
-					library7.close();
+				
 				}
 
 
