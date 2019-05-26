@@ -7,8 +7,9 @@
 #include <string>
 #include <chrono>
 
-#include<windows.h>
 
+#include<windows.h>
+#include <stdio.h>
 using namespace std;
 
 // displaying the menu
