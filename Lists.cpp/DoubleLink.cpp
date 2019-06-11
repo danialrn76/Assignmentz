@@ -3,6 +3,7 @@
 #include <iostream>
 
 using namespace std;
+
 DoubleLink::DoubleLink()
 {
 	this->m_size = 0;
@@ -27,7 +28,18 @@ DoubleLink::~DoubleLink()
 
 void DoubleLink::Erase(Iterator a_iterator)
 {
-	Node* node = new Node();
+	a_iterator.GetNode();
+
+
+
+
+	/*Node* node = head;
+	a_iterator.GetNode();
+	if (a_iterator.GetNode() == node) {
+	
+		head = node->next;
+		delete node;
+	}*/
 
 	//for (int i = 0; i < a_iterator; i++) {
 	//
@@ -69,7 +81,7 @@ void DoubleLink::Remove(int value)
 {
 
 	Node *current = head, *previous = nullptr;
-	/*std::cout << "this list is empty" << std::endl;*/
+	
 	if (Empty()) {
 		std::cout << " the list is empty" << std::endl;
 	}
@@ -161,10 +173,10 @@ void DoubleLink::clear()
 	}
 	PopFront();
 
-	if (Empty()) {
+	/*if (Empty()) {
 
 		cout << "the list is empty";
-	}
+	}*/
 }
 
 void DoubleLink::Print()
@@ -177,6 +189,7 @@ void DoubleLink::Print()
 		head = head->next;
 		i++;
 	}
+
 
 	/*Node * current = head;
 	int count = 0;

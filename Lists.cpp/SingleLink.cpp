@@ -209,7 +209,7 @@ void SingleLink::PushBack(int a_end)
 			// same as if(check == false)
                 if(!check)
 				{
-				std::cout << "value could niot be found" << std::endl;
+				std::cout << "value could not be found" << std::endl;
 				
 				
 				}

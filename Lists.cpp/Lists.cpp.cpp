@@ -67,6 +67,11 @@ int main()
 
 	std::cout << std::endl << std::endl;
 
+	
+	//DoubleLink::Iterator().operator*(2);
+
+
+	//doubleList->PopBack()*/;
 	//doubleList->PushBack(5);
 	//doubleList->Print();
 
@@ -85,9 +90,9 @@ int main()
 	/*doubleList->Erase(2);*/
 
 	//doubleList->Erase(first, 2);
-	DoubleLink::Iterator iter = DoubleLink::Iterator();
+	/*DoubleLink::Iterator iter = DoubleLink::Iterator();
 	doubleList->Erase();
-	doubleList->Print();
+	doubleList->Print();*/
 
 	//DoubleLink::Iterator aft = doubleList->First();
 	//doubleList->InsertAfter(aft, 8);
