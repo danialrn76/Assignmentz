@@ -1,0 +1,5 @@
+﻿  Arena.cpp
+c:\users\s191280\source\repos\arena\arena\arena.cpp(36): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191280\source\repos\arena\arena\arena.cpp(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\source\repos\arena\arena\arena.cpp(97): warning C4018: '<': signed/unsigned mismatch
+  Arena.vcxproj -> C:\Users\s191280\source\repos\Arena\Debug\Arena.exe
