@@ -5,9 +5,7 @@
 TeamB::TeamB()
 {
 
-	Michael.SetHeroName("Michael");
-	Trevor.SetHeroName("Trever");
-	Lamar.SetHeroName("Lamar");
+	
 }
 
 

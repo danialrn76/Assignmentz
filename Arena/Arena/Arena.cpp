@@ -1,5 +1,3 @@
-// Arena.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include "pch.h"
 #include <iostream>
@@ -13,16 +11,24 @@
 #include <time.h>
 #include <algorithm>
 
+
 using namespace std;
 using namespace std::chrono;
 using namespace std::this_thread;
 
 int main()  
 {
+
+
+	cout << "Let the battle between Losantos and groove street begin!!!!!\n\n";
+
+
 	TeamA a;
 	TeamB b;
 
 
+
+	vector<int>::iterator it;
 
 	Hero Cj;
 	Hero Bigsmoke;
@@ -33,11 +39,10 @@ int main()
 	Hero Trevor;
 	Hero Lamar;
 
-	srand (time(NULL));
+	srand(time(NULL));
 
 
-	int rnd = rand() % 2;
-	/*int rndb = rand() % 2;*/
+	
 
 	Cj.SetHeroName("cj");
 	Bigsmoke.SetHeroName("Big Smoke");
@@ -65,61 +70,94 @@ int main()
 	bool gameState = true;
 
 
-
+	
+	
 
 	while (gameState) {
 
-		sleep_for(1300000000ns);
 
-		cout << b.Heroesb[rnd].GetHeroName() << " shot " << a.Heroesa[rnd].GetHeroName() << "\n";
+		//Init random person to attack at the start of the event cycle
+		int rnda = rand() % (int)(a.Heroesa.size() );
+		int rndb = rand() % (int)(b.Heroesb.size() );
 
-		a.Heroesa[rnd].takeHit();
-
-		cout << a.Heroesa[rnd].GetHeroName() << "'s health is " << a.Heroesa[rnd].health << "\n\n";
-
-		sleep_for(1300000000ns);
-
-		cout << a.Heroesa[rnd].GetHeroName() << " shot " << b.Heroesb[rnd].GetHeroName() << "\n";
-
-		b.Heroesb[rnd].takeHit();
-
-		cout << b.Heroesb[rnd].GetHeroName() << "'s health is " << b.Heroesb[rnd].health << "\n\n";
-
-
-		for (int i = 0; i < a.Heroesa.size(); i++) {
-
-			if (a.Heroesa[rnd].health == 0) {
-
-				b.Heroesb[i].GetHeroName().erase();
-			}
-		}
-
-		for (int i = 0; i < b.Heroesb.size(); i++)
-		{
-
-			if (b.Heroesb[rnd].health == 0) {
-
-				b.Heroesb[i].GetHeroName().erase();
-			}
-		}
-
-
-		/*if (Cj.health == 0) {
 		
-			gameState = false;
-		}*/
+
+		cout << "Press enter to continue:\n";
+		cin.ignore();
+
+			cout << b.Heroesb[rndb].GetHeroName() << " shot " << a.Heroesa[rnda].GetHeroName() << "\n";
+
+			a.Heroesa[rnda].takeHit();
+
+			cout << a.Heroesa[rnda].GetHeroName() << "'s health is " << a.Heroesa[rnda].health << "\n\n";
 
 
-		if (Cj.health == 0 || Bigsmoke.health == 0 || Ryder.health == 0) {
-			cout << "Game Over!\nlosantos won!!!";
-			break;
-		}
+
+			for (int i = 0; i < a.Heroesa.size(); i++) {
+
+				if (a.Heroesa[i].health <= 0) {
+					cout << a.Heroesa[i].GetHeroName() << " is dead\n ";
+
+					a.Heroesa.erase(a.Heroesa.begin() + i);
+
+					
+					
+				}
+			}
+					if (a.Heroesa.size() == 0) {
+
+						cout << "Game Ovver\n\n **********Losantos Won!!!!!**********\n";
+						gameState = false;
+						
+											break;
+					}
+	
 
 
-		if (Michael.health == 0 || Lamar.health == 0 || Trevor.health == 0) {
-			cout << "Game Over!\nGrove street won!!!";
-			break;
-		}
+			// Regenerate New Random Attacks from the remaining team member size
+			rnda = rand() % (int)(a.Heroesa.size());
+			rndb = rand() % (int)(b.Heroesb.size());
+
+			cout << "Press enter to continue:\n";
+			cin.ignore();
+
+			cout << a.Heroesa[rnda].GetHeroName() << " shot " << b.Heroesb[rndb].GetHeroName() << "\n";
+
+			b.Heroesb[rndb].takeHit();
+
+			cout << b.Heroesb[rndb].GetHeroName() << "'s health is " << b.Heroesb[rndb].health << "\n\n";
+
+
+
+
+
+
+			for (int i = 0; i < b.Heroesb.size(); i++)
+			{
+
+				if (b.Heroesb[i].health <= 0) {
+
+					cout << b.Heroesb[i].GetHeroName() << " is dead\n ";
+
+					b.Heroesb.erase(b.Heroesb.begin() + i);
+
+					
+				}
+			}
+					if (b.Heroesb.size() == 0) {
+
+						cout << "Game Ovver\n\n **********Groove Street!!!!!**********\n";
+						gameState = false;
+
+						break;
+					}
+
+
+		
+
+
+
+		
 
 	}
 
@@ -130,13 +168,3 @@ int main()
 
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

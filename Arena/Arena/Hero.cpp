@@ -23,6 +23,13 @@ string Hero::GetHeroName()
 	return heroName;
 }
 
+Hero Hero::itSelf()
+{
+	return Hero();
+}
+
+
+
 
 
 Hero::~Hero()
