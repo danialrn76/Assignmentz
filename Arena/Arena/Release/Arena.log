@@ -1,0 +1,18 @@
+﻿  pch.cpp
+  Arena.cpp
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(44): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(82): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(117): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(133): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(138): warning C4129: 'N': unrecognized character escape sequence
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(172): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(189): warning C4018: '<': signed/unsigned mismatch
+c:\users\s191280\documents\github\assignmentz\arena\arena\arena.cpp(194): warning C4129: 'N': unrecognized character escape sequence
+  Hero.cpp
+  TeamA.cpp
+  TeamB.cpp
+  Generating code
+  All 184 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Arena.vcxproj -> C:\Users\s191280\Documents\GitHub\Assignmentz\Arena\Release\Arena.exe
