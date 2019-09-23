@@ -43,7 +43,6 @@ class cpArr{
 
 	cpArr& operator=(const cpArr &cpArr2)
 	{
-		
 		delete[]dynArr;
 
 		capacity = cpArr2.capacity;
@@ -111,19 +110,17 @@ class cpArr{
 	
 	}
 
-
+	//adds to the end of the array
 	void pushBack(int val) {
-
 
 		adding(counter, val);
 
-		/*
-		for(int i = counter)*/
-
-
-
 	}
 
+	void popBack() {
+	
+		remove();
+	}
 
 	
 };
@@ -184,6 +181,15 @@ int main()
 		cout << arr1[i] << endl;
 	}
 
+	cout << "\n\n";
+
+	arr1.resize(7);
+	
+
+	for (int i = 0; i < 7; i++) {
+
+		cout << arr1[i] << endl;
+	}
 
 
 	//arr1.resize(4);
