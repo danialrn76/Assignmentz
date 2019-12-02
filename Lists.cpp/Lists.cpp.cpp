@@ -9,10 +9,12 @@
 
 void singleLinkListCall() {
 	SingleLink *singlelist = new SingleLink();
+
 	for (int i = 0; i < 100; i++) {
 		singlelist->Fill(rand() % 100);
 
 	}
+
 	/*singlelist->PushFront(222);
 	singlelist->PushBack(223);
 	singlelist->PushBack(224);*/
@@ -64,6 +66,15 @@ int main()
 	doubleList->PushFront(9);
 	doubleList->PushFront(8);
 	doubleList->Print();
+
+
+
+	std::cout << "\n\n";
+	doubleList->Erase(doubleList->Begin() + 1);
+
+
+	doubleList->Print();
+
 
 	std::cout << std::endl << std::endl;
 

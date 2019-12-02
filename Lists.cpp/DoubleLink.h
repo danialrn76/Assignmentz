@@ -18,27 +18,26 @@ public:
 
 		void operator++() { m_node = m_node->next;};
 		void operator++(int) { m_node = m_node->next++; }
+
 		const Iterator& operator+(const int a_value) {
 			//e.g. Iterator + 12
-			Node *m_node = new Node();
+
+
+			Node *l_node = m_node;
+
 			for (int i = 0; i < a_value; ++i) {
-				
-				m_node = m_node->next;
+			
+				if (l_node->next == nullptr)
+					break;
+
+				l_node = l_node->next;
 			}	
-			return Iterator(m_node);
+
+			return Iterator(l_node);
 			
 		}
 
 
-		//Node set(Node * a_head, const int a_value) {
-		//	Node *m_node = a_head;
-		//	for (int i = 0; i < (a_value-1); i++) {
-
-		//		m_node = m_node->next;
-		//	}
-		//	return *m_node;
-
-		//}
 
 		void operator--() { m_node = m_node->prev; }
 		void operator--(int) { m_node = m_node->prev; }

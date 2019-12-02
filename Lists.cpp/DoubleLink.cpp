@@ -28,10 +28,33 @@ DoubleLink::~DoubleLink()
 
 void DoubleLink::Erase(Iterator a_iterator)
 {
-	a_iterator.GetNode();
+	
+	Node *current = First();
+
+	while (current != nullptr)
+	{
+		if (a_iterator.GetNode() != current) 
+		{
+		
+			current = current->next;
+			/*conti = ue;*/
+		}
+		else
+		{
+			current->prev->next = current->next;
 
 
+			if(current->next != nullptr)
+			current->next->prev = current->prev;
 
+
+			delete current;
+			current = nullptr;
+		}
+		
+
+
+	}
 
 	/*Node* node = head;
 	a_iterator.GetNode();
@@ -89,11 +112,7 @@ void DoubleLink::Remove(int value)
 		head = current->next;
 		delete current;
 
-		/*Iterator temp;
-		
-		Erase(temp, value);
-*/
-
+	
 
 	}
 	else
@@ -173,10 +192,7 @@ void DoubleLink::clear()
 	}
 	PopFront();
 
-	/*if (Empty()) {
-
-		cout << "the list is empty";
-	}*/
+	
 }
 
 void DoubleLink::Print()
@@ -191,16 +207,7 @@ void DoubleLink::Print()
 	}
 
 
-	/*Node * current = head;
-	int count = 0;
-	while (current != nullptr)
-	{
-		count++;
-		std::cout << count << ":" << current->m_data << std::endl;
-		if (current->prev != nullptr) { std::cout << "previous: " << current->prev->m_data << std::endl; }
-		if (current->next != nullptr) { std::cout << "next: " << current->next->m_data << std::endl; }
-		current = current->next;
-	}*/
+	
 
 }
 
@@ -265,10 +272,7 @@ void DoubleLink::InsertAfter(Iterator a_iterator, int a_value)
 	
 	
 
-	//while (a_value != current->m_data) {
-	//	
-	//}
-	//cout << "asggasdf";
+	
 }
 
 DoubleLink::Iterator DoubleLink::Begin()
