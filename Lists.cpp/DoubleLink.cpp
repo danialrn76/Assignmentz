@@ -175,6 +175,52 @@ void DoubleLink::PopFront()
 	
 }
 
+
+int DoubleLink::search(int search)
+{
+
+	struct Node *temp = head;
+	
+	int count = 0, flag = 0, value;
+
+	if (temp == NULL)
+		return -1;
+
+	else
+	{
+		while (temp->next != head) 
+		{
+			count++;
+			if (temp->m_data == search) {
+				flag = 1;
+				count--;
+				break;
+			}
+			temp = temp->next;
+		}
+
+		if (temp->m_data == search) 
+		{
+			count++;
+			flag = 1;
+		}
+
+		if (flag == 1)
+			cout << "\n" << search << " found at location " <<
+			count << endl;
+		else
+			cout << "\n" << search << " not found" << endl;
+
+	}
+
+
+
+	
+}
+
+
+
+
 bool DoubleLink::Empty()
 {
 	return head == nullptr;
@@ -290,9 +336,6 @@ void DoubleLink::Print()
 		head = head->next;
 		i++;
 	}
-
-
-	
 
 }
 

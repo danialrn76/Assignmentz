@@ -31,7 +31,8 @@ int main()
 {
 
 
-
+	
+	
 
 	/*DoubleLink::Iterator;*/
 
@@ -68,7 +69,7 @@ int main()
 	doubleList->PushFront(8);
 	doubleList->PushFront(5);
 
-	/*doubleList->Print();*/
+	doubleList->Print();
 
 
 
@@ -80,8 +81,12 @@ int main()
 
 
 	std::cout << std::endl << std::endl;
+/*
+	doubleList->sort();*/
 
-	doubleList->sort();
+
+
+	doubleList->search(9);
 	
 	//DoubleLink::Iterator().operator*(2);
 
