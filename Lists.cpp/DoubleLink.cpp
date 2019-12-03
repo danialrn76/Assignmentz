@@ -180,6 +180,91 @@ bool DoubleLink::Empty()
 	return head == nullptr;
 }
 
+bool DoubleLink::IsEmpty()
+{
+	return head == nullptr;
+	return true;
+}
+
+bool DoubleLink::IsSorted()
+{
+	if (!IsEmpty()) 
+	{
+		Node* cur = head;
+		while (cur != tail) 
+		{
+			if (cur->m_data > cur->next->m_data) 
+			{
+				return false;
+			}
+			cur = cur->next;
+		}
+		return true;
+	}
+
+	return true;
+}
+
+void DoubleLink::sort()
+{
+	if (!IsSorted() && !IsEmpty()) 
+	{
+		while (!IsSorted())
+		{
+			Node* cur = head;
+			if (cur->m_data > cur->next->m_data) 
+			{
+				head = cur->next;
+				head->prev = nullptr;
+				cur->next = head->next;
+				head->next = cur;
+				if (cur->next != nullptr) 
+					cur->next->prev = cur;
+				
+					cur->prev = head;
+				
+			}
+			else
+			{
+				cur = cur->next;
+			}
+			while (cur->next != tail  && cur->next != nullptr) 
+			{
+				if (cur->m_data > cur->next->m_data) 
+				{
+					cur->prev->next = cur->next;
+					cur->next->prev = cur->prev;
+					cur->prev = cur->next;
+					cur->next = cur->next->next;
+					cur->next->prev->next = cur;	
+					cur->next->prev = cur;
+				}
+				else 
+				{
+					cur = cur->next;
+				}
+
+			}
+			if (cur->m_data > tail->m_data) 
+			{
+				cur->prev->next = tail;
+				cur->next = nullptr;
+				tail->next = cur;
+				tail->prev = cur->prev;
+				cur->prev = tail;
+				tail = cur;
+				
+
+			}
+
+			
+			system("CLS");
+			Print();
+
+		}
+	}
+}
+
 void DoubleLink::clear()
 {
 	Node *node = head->next;

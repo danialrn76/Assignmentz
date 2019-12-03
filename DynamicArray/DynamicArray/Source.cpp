@@ -61,9 +61,9 @@ int main()
 	}
 
 
+	
 	cout << "\n\n";
-
-	arr1.reSize(3);
+	arr1.reSize(8);
 	
 
 	for (int i = 0; i < arr1.capacity; i++) {
@@ -71,9 +71,15 @@ int main()
 		cout << arr1[i] << endl;
 	}
 
+	/*cout << "\n\n";
+	
+	arr1.reSize(6);
 
 
+	for (int i = 0; i < arr1.capacity; i++) {
 
+		cout << arr1[i] << endl;
+	}*/
 }
 
 

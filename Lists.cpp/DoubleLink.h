@@ -82,9 +82,13 @@ public:
 	void PopFront(); // remove the first element
 
 	bool Empty();// return a boolean, true of the list is empty, false otherwise
+	bool IsEmpty();//checks to see if the list is empty
+	bool IsSorted();//checks to see if the list is sorted
+	void sort();//sorting the list
 
 	void clear(); // remove all elements from the list
 	void Print();
+
 
 	Node *head, *tail;
 private:

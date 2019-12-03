@@ -62,22 +62,26 @@ int main()
 
 
 	DoubleLink *doubleList = new DoubleLink();
+
 	doubleList->PushFront(10);
 	doubleList->PushFront(9);
 	doubleList->PushFront(8);
-	doubleList->Print();
+	doubleList->PushFront(5);
+
+	/*doubleList->Print();*/
 
 
 
 	std::cout << "\n\n";
-	doubleList->Erase(doubleList->Begin() + 1);
+	/*doubleList->Erase(doubleList->Begin() + 1);*/
 
 
-	doubleList->Print();
+	/*doubleList->Print();*/
 
 
 	std::cout << std::endl << std::endl;
 
+	doubleList->sort();
 	
 	//DoubleLink::Iterator().operator*(2);
 
