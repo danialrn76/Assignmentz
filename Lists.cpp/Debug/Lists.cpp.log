@@ -1,2 +1,13 @@
-﻿  Lists.cpp.cpp
+﻿  pch.cpp
+  DoubleLink.cpp
+c:\users\s191280\documents\github\assignmentz\lists.cpp\doublelink.cpp(182): warning C4099: 'Node': type name first seen using 'class' now seen using 'struct'
+  c:\users\s191280\documents\github\assignmentz\lists.cpp\node.h(2): note: see declaration of 'Node'
+c:\users\s191280\documents\github\assignmentz\lists.cpp\doublelink.cpp(184): warning C4101: 'value': unreferenced local variable
+  Lists.cpp.cpp
+  Node.cpp
+  SingleLink.cpp
+  Generating Code...
+c:\users\s191280\documents\github\assignmentz\lists.cpp\singlelink.cpp(105): warning C4715: 'SingleLink::begin': not all control paths return a value
+c:\users\s191280\documents\github\assignmentz\lists.cpp\doublelink.cpp(219): warning C4715: 'DoubleLink::search': not all control paths return a value
+  LINK : C:\Users\s191280\Documents\GitHub\Assignmentz\Lists.cpp\Debug\Lists.cpp.exe not found or not built by the last incremental link; performing full link
   Lists.cpp.vcxproj -> C:\Users\s191280\Documents\GitHub\Assignmentz\Lists.cpp\Debug\Lists.cpp.exe
