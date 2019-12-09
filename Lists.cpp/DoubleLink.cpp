@@ -175,9 +175,140 @@ void DoubleLink::PopFront()
 	
 }
 
+
+int DoubleLink::search(int search)
+{
+
+	struct Node *temp = head;
+	
+	int count = 0, flag = 0, value;
+
+	if (temp == NULL)
+		return -1;
+
+	else
+	{
+		while (temp->next != head) 
+		{
+			count++;
+			if (temp->m_data == search) {
+				flag = 1;
+				count--;
+				break;
+			}
+			temp = temp->next;
+		}
+
+		if (temp->m_data == search) 
+		{
+			count++;
+			flag = 1;
+		}
+
+		if (flag == 1)
+			cout << "\n" << search << " found at location " <<
+			count << endl;
+		else
+			cout << "\n" << search << " not found" << endl;
+
+	}
+
+
+
+	
+}
+
+
+
+
 bool DoubleLink::Empty()
 {
 	return head == nullptr;
+}
+
+bool DoubleLink::IsEmpty()
+{
+	return head == nullptr;
+	return true;
+}
+
+bool DoubleLink::IsSorted()
+{
+	if (!IsEmpty()) 
+	{
+		Node* cur = head;
+		while (cur != tail) 
+		{
+			if (cur->m_data > cur->next->m_data) 
+			{
+				return false;
+			}
+			cur = cur->next;
+		}
+		return true;
+	}
+
+	return true;
+}
+
+void DoubleLink::sort()
+{
+	if (!IsSorted() && !IsEmpty()) 
+	{
+		while (!IsSorted())
+		{
+			Node* cur = head;
+			if (cur->m_data > cur->next->m_data) 
+			{
+				head = cur->next;
+				head->prev = nullptr;
+				cur->next = head->next;
+				head->next = cur;
+				if (cur->next != nullptr) 
+					cur->next->prev = cur;
+				
+					cur->prev = head;
+				
+			}
+			else
+			{
+				cur = cur->next;
+			}
+			while (cur->next != tail  && cur->next != nullptr) 
+			{
+				if (cur->m_data > cur->next->m_data) 
+				{
+					cur->prev->next = cur->next;
+					cur->next->prev = cur->prev;
+					cur->prev = cur->next;
+					cur->next = cur->next->next;
+					cur->next->prev->next = cur;	
+					cur->next->prev = cur;
+				}
+				else 
+				{
+					cur = cur->next;
+				}
+
+			}
+			if (cur->m_data > tail->m_data) 
+			{
+				cur->prev->next = tail;
+				cur->next = nullptr;
+				tail->next = cur;
+				tail->prev = cur->prev;
+				cur->prev = tail;
+				tail = cur;
+				
+
+			}
+
+			
+			system("CLS");
+			Print();
+
+		}
+	}
 }
 
 void DoubleLink::clear()
@@ -205,9 +336,6 @@ void DoubleLink::Print()
 		head = head->next;
 		i++;
 	}
-
-
-	
 
 }
 

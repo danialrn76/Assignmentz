@@ -31,7 +31,8 @@ int main()
 {
 
 
-
+	
+	
 
 	/*DoubleLink::Iterator;*/
 
@@ -62,77 +63,32 @@ int main()
 
 
 	DoubleLink *doubleList = new DoubleLink();
+
 	doubleList->PushFront(10);
 	doubleList->PushFront(9);
 	doubleList->PushFront(8);
+	doubleList->PushFront(5);
+
 	doubleList->Print();
 
 
 
 	std::cout << "\n\n";
-	doubleList->Erase(doubleList->Begin() + 1);
+	/*doubleList->Erase(doubleList->Begin() + 1);*/
 
 
-	doubleList->Print();
+	/*doubleList->Print();*/
 
 
 	std::cout << std::endl << std::endl;
 
-	
-	//DoubleLink::Iterator().operator*(2);
+	doubleList->sort();
 
 
-	//doubleList->PopBack()*/;
-	//doubleList->PushBack(5);
-	//doubleList->Print();
 
-	//std::cout << std::endl << std::endl;
-
-	//doubleList->Remove(9);
-	//doubleList->Print();
-
-	//std::cout << std::endl;
-	/*DoubleLink::Iterator().operator+(2);*/
-	
-	/*doubleList->First();*/
-	/*DoubleLink::Iterator target(doubleList->head);
-	target.operator++(2);*/
-	//first.set(doubleList->head,2);
-	/*doubleList->Erase(2);*/
-
-	//doubleList->Erase(first, 2);
-	/*DoubleLink::Iterator iter = DoubleLink::Iterator();
-	doubleList->Erase();
-	doubleList->Print();*/
-
-	//DoubleLink::Iterator aft = doubleList->First();
-	//doubleList->InsertAfter(aft, 8);
-	//doubleList->Print();
-	/*DoubleLink::Iterator().operator+(2);*/
-
-    
-	/*doubleList->Print();*/
-
+	doubleList->search(9);
 	
 	
-	//std::cout << "my first value is: " << doubleList->First();
-
-	//DoubleLink::Iterator i = DoubleLink::Iterator().operator+(2);
-	//i++;
-
-	
-
-	/*doublelink::iterator().operator+(2);*/
-	/*doublelist->erase();
-	doubleList->Print();
-
-	//
-
-	//
-
-	///*doubleList->First();*/
-
-	/*singleLinkListCall();*/
 
 
 
